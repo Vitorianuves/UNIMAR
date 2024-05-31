@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.inicio {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    background: #333;
+    color: #fff;
+    padding: 5px ;
+    margin-bottom: 10px;
+}
+
+.trabalho, .educacao, .projetu {
+    margin-bottom: 10px;
+}
+
+.trabalho h3, .educacao h3, .projetu h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.data, .posicao, .curso {
+    font-style: italic;
+    color: #555;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.habilidades li {
+    display: inline-block;
+    margin-right: 10px;
+    background: #eee;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid yellow;
+}
+
+.habilidades li:hover{
+    background-color: #333;
+    color: white;
+}
+
+.project p {
+    margin: 5px 0;
+}
+
+.padireita{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    
+}
+
+.icon-large {
+    font-size: 30px;
+    color: black;
+}
+
