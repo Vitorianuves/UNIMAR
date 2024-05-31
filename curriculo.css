@@ -37,7 +37,7 @@ section {
 h2 {
     background: #333;
     color: #fff;
-    padding: 5px ;
+    padding: 5px;
     margin-bottom: 10px;
 }
 
@@ -68,7 +68,7 @@ ul {
     border: 2px solid yellow;
 }
 
-.habilidades li:hover{
+.habilidades li:hover {
     background-color: #333;
     color: white;
 }
@@ -77,11 +77,10 @@ ul {
     margin: 5px 0;
 }
 
-.padireita{
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-    
+.padireita {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
 }
 
 .icon-large {
@@ -89,3 +88,26 @@ ul {
     color: black;
 }
 
+
+@media screen and (max-width: 768px) {
+    .inicio {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .inicio {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+.habilidades li {
+    display: block;
+    margin: 5px 0;
+}
+}
