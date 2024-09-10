@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#quiz-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#next-btn {
+    margin-top: 20px;
+    display: none;
+}
+
+#score {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+    </style>
+    <title>Quiz de Curiosidades</title>
+    
+</head>
+<body>
+    <div id="quiz-container">
+        <h1>Quiz de Curiosidades</h1>
+        <div id="quiz">
+            <p id="question"></p>
+            <div class="options">
+                <button class="option" onclick="checkAnswer(0)">Opção 1</button>
+                <button class="option" onclick="checkAnswer(1)">Opção 2</button>
+                <button class="option" onclick="checkAnswer(2)">Opção 3</button>
+                <button class="option" onclick="checkAnswer(3)">Opção 4</button>
+            </div>
+        </div>
+        <button id="next-btn" onclick="nextQuestion()">Próxima Pergunta</button>
+        <p id="score"></p>
+    </div>
+    <script >
+    const questions = [
+    {
+        question: "Qual é o maior planeta do nosso sistema solar?",
+        options: ["Terra", "Júpiter", "Marte", "Vênus"],
+        correctAnswer: 1
+    },
+    {
+        question: "Qual animal é conhecido como o 'rei da selva'?",
+        options: ["Elefante", "Leão", "Tigre", "Gorila"],
+        correctAnswer: 1
+    },
+    {
+        question: "Quem pintou a Mona Lisa?",
+        options: ["Vincent van Gogh", "Leonardo da Vinci", "Pablo Picasso", "Claude Monet"],
+        correctAnswer: 1
+    },
+    {
+    	question: "Onde você mora?",
+        options:["Rua", "Casa muito engraçada", "ponte", "lugar nenhum"],
+        correctAnswer: 1
+    	
+    }
+];
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function loadQuestion() {
+    const currentQuestion = questions[currentQuestionIndex];
+    document.getElementById('question').textContent = currentQuestion.question;
+    const options = document.querySelectorAll('.option');
+    options.forEach((option, index) => {
+        option.textContent = currentQuestion.options[index];
+    });
+    document.getElementById('next-btn').style.display = 'none';
+}
+
+function checkAnswer(selectedIndex) {
+    const currentQuestion = questions[currentQuestionIndex];
+    if (selectedIndex === currentQuestion.correctAnswer) {
+        score++;
+        alert("Resposta correta!");
+    } else {
+        alert("Resposta incorreta!");
+    }
+    document.getElementById('next-btn').style.display = 'block';
+}
+
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+    } else {
+        document.getElementById('quiz').style.display = 'none';
+        document.getElementById('score').textContent = `Você acertou ${score} de ${questions.length} perguntas!`;
+    }
+}
+
+window.onload = loadQuestion;
+
+    
+    
+    </script>
+</body>
+
+</html>
